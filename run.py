@@ -1,7 +1,17 @@
-# Create Welcome for the player
+# Import libraries
+import random
 
+# Create welcome for the visitor, ask visitor to input their name
 
-# Option to read instructions (i), play the game (p) or exit (e). "Type in the letter of your choice (i, p, or e) and then press Enter. 
+name = input("Please type your name and press Enter: ")
+print("Welcome "+name)
+print(
+    "Type i to read instructions \n"
+    "Type g to start the game \n"
+    "Type e to exit the game \n"
+    "After you have typed your chosen letter (i, g or e), press Enter"
+)
+
 # Create Error messages if they choose anything else than i, p, e. Letters only, and those letters only.
 
 # Instructions:
