@@ -1,6 +1,6 @@
-# Overview of the game
-
 # Create Welcome for the player
+
+
 # Option to read instructions (i), play the game (p) or exit (e). "Type in the letter of your choice (i, p, or e) and then press Enter. 
 # Create Error messages if they choose anything else than i, p, e. Letters only, and those letters only.
 

@@ -30,3 +30,88 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 ---
 
 Happy coding!
+
+1. readme template, credit
+2. delete ci readme guidelines once steps completed
+3. add links and menu, back buttons
+4. turn links into a name/clickable word
+
+# Tic-Tac-Toe
+
+Talk about it. Spell check. Add link to the site.
+Add am I responsive image.
+Check that all the links work, all anchors.
+
+## Contents
+
+[User Experience](#user-experience)
+  - [First Time User:](#first-time-user)
+  - [Returning User:](#returning-user)
+
+[Features](#features)
+  - [Existing Features](#existing-features)
+  - [Future Features](#future-features)
+
+[Testing](#testing)
+- [Manual Testing](#manual-testing)
+- [Validator Testing](#validator-testing)
+
+[Bugs](#bugs)
+- [Fixed Bugs](#fixed-bugs)
+- [Known Bugs](#known-bugs)
+
+[Deployment](#deployment)
+
+[Credits](#credits)
+
+[Back to top](#contents)
+
+
+
+
+# User Experience
+
+## First Time User:
+
+## Returning User:
+
+[Back to top](#contents)
+
+# Features
+
+## Existing Features
+
+## Future Features
+
+[Back to top](#contents)
+
+# Testing
+
+## Manual Testing
+
+## Validator Testing
+
+[Back to top](#contents)
+
+## Bugs
+
+### Fixed Bugs
+
+### Known Bugs
+
+[Back to top](#contents)
+
+# Deployment
+
+[Back to top](#contents)
+
+# Credits
+
+- This project's README template is from a project: [A Battleships game](https://raw.githubusercontent.com/Code-Institute-Submissions/Battleships-P3-1/main/README.md)
+- README edited: contents menu added, clickable links, anchors based on the README that developer created as her project 2 (Code Institute, Software Development course).
+
+- Developer learned how to check pip installation, and how to install PyGame from [this article](https://www.geeksforgeeks.org/how-to-install-pygame-in-windows/)
+
+- Thank you mentor Daisy... for your input
+
+[Back to top](#contents)
