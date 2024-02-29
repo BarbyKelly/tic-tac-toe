@@ -1,10 +1,23 @@
 # Import libraries
 import random
 
-# Create welcome for the visitor, ask visitor to input their name
 
-name = input("Please type your name and press Enter: ")
-print("Welcome "+name)
+# Create welcome for the visitor, ask visitor to input their name
+# Create Error messages if name too long, or other than letters
+
+player_name = input("Please type your name and press Enter: ")
+
+
+print("Welcome " + player_name)
+
+#       if player_name.isalpha() is False:
+#           print("Please type letters only")
+
+
+# else:
+#     print("Welcome "+player_name)
+
+
 print(
     "Type i to read instructions \n"
     "Type g to start the game \n"
@@ -12,7 +25,15 @@ print(
     "After you have typed your chosen letter (i, g or e), press Enter"
 )
 
-# Create Error messages if they choose anything else than i, p, e. Letters only, and those letters only.
+
+
+# Create calls for functions
+
+player_name()
+
+
+# Create Error messages if they choose anything else than i, g, e. Letters only, and those letters only.
+
 
 # Instructions:
 # This version of Tic-Tac-Toe involves 2 players: website visitor vs computer and Tic-Tac-Toe board consisting 9 empty boxes.
