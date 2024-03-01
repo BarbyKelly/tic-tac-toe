@@ -33,21 +33,21 @@ def tictactoe_board(board):
 # Create a condition to determine the winner
 def is_winner(bo, le):
     return
-    (board [1] == le and bo[2] == le and bo[3] == le)
-    or (board [4] == le and bo[5] == le and bo[6] == le)
-    or (board [7] == le and bo[8] == le and bo[9] == le)
-    or (board [1] == le and bo[4] == le and bo[7] == le)
-    or (board [2] == le and bo[5] == le and bo[8] == le)
-    or (board [3] == le and bo[6] == le and bo[9] == le)
-    or (board [1] == le and bo[5] == le and bo[9] == le)
-    or (board [7] == le and bo[5] == le and bo[3] == le)
+    (board[1] == le and bo[2] == le and bo[3] == le)
+    or (board[4] == le and bo[5] == le and bo[6] == le)
+    or (board[7] == le and bo[8] == le and bo[9] == le)
+    or (board[1] == le and bo[4] == le and bo[7] == le)
+    or (board[2] == le and bo[5] == le and bo[8] == le)
+    or (board[3] == le and bo[6] == le and bo[9] == le)
+    or (board[1] == le and bo[5] == le and bo[9] == le)
+    or (board[7] == le and bo[5] == le and bo[3] == le)
 
 
 # Create player's move, guidelines and restrictions
 def player_move():
     run = True
     while run:
-        move = input("Please mark your chosen empty box by typing a number (1-9)")
+        move = input("Please mark any empty box by typing a number (1-9)")
         try:
             move = int(move)
             if move > 0 and move < 10:
@@ -58,10 +58,8 @@ def player_move():
                     print("This box is occupied! Please try a different one.")
             else:
                 print("Please type a number between 1-9")
-        except:
+        except error:
             print("Please type a number(1-9")
-
-
 
 
 # Create if board is full
@@ -78,15 +76,15 @@ def main():
     print("Welcome to Tic Tac Toe")
     print(tictactoe_board)
 
-    while not(is_board_full(board)):
-        if not(is_winner(board, 'O')):
+    while not (is_board_full(board)):
+        if not (is_winner(board, 'O')):
             player_move()
             tictactoe_board(board)
         else:
             print("Computer won this time. Thanks for playing!")
             break
 
-        if not(is_winner(board, 'X')):
+        if not (is_winner(board, 'X')):
             comp_move()
             tictactoe_board(board)
         else:
