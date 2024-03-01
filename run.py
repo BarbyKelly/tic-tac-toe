@@ -98,6 +98,13 @@ def comp_move():
     return move
 
 
+# Add random function for computer's moves
+def select_random(li):
+    ln = len(li)
+    r = random.randrange(o,ln)
+    return li(r)
+
+
 # Create if board is full
 def is_board_full(board):
     if board.count(' ') > 1:
