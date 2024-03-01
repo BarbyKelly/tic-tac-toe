@@ -1,3 +1,35 @@
+import random
+
+# Tic tac toe game base code followed from
+# this tutorial: https://youtu.be/5s_lGC2sxwQ?feature=shared
+# add to readme credit as well, tidy link
+
+# Create a tic-tac-toe board
+board = [' ' for x in range(10)]
+
+def insert_letter(letter, position):
+    board[position] = letter
+
+
+def free_space(position):
+    return board[position] == ' '
+
+
+def print_board(board):
+    print('+--+--+--+--')
+    print('|  |  |  |')
+    print('| ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
+    print('|  |  |  |')
+    print('+--+--+--+--')
+    print('|  |  |  |')
+    print('| ' + board[4] + ' | ' + board[5] + ' | ' + board[6])
+    print('|  |  |  |')
+    print('+--+--+--+--')
+    print('|  |  |  |')
+    print('| ' + board[7] + ' | ' + board[8] + ' | ' + board[9])
+    print('|  |  |  |')
+
+
 # Create Welcome for the player
 
 
