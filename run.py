@@ -7,12 +7,13 @@ import random
 # Create a tic-tac-toe board
 board = [' ' for x in range(10)]
 
-def insert_letter(letter, position):
-    board[position] = letter
+
+def insert_letter(le, pos):
+    board[pos] = letter
 
 
-def free_space(position):
-    return board[position] == ' '
+def free_space(pos):
+    return board[pos] == ' '
 
 
 def print_board(board):
@@ -29,6 +30,17 @@ def print_board(board):
     print('| ' + board[7] + ' | ' + board[8] + ' | ' + board[9])
     print('|  |  |  |')
 
+# Create a condition to determine the winner
+def is_winner(bo, le):
+    return
+    (board [1] == le and bo[2] == le and bo[3] == le)
+    or (board [4] == le and bo[5] == le and bo[6] == le)
+    or (board [7] == le and bo[8] == le and bo[9] == le)
+    or (board [1] == le and bo[4] == le and bo[7] == le)
+    or (board [2] == le and bo[5] == le and bo[8] == le)
+    or (board [3] == le and bo[6] == le and bo[9] == le)
+    or (board [1] == le and bo[5] == le and bo[9] == le)
+    or (board [7] == le and bo[5] == le and bo[3] == le)
 
 # Create Welcome for the player
 
