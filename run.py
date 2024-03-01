@@ -42,6 +42,13 @@ def is_winner(bo, le):
     or (board [1] == le and bo[5] == le and bo[9] == le)
     or (board [7] == le and bo[5] == le and bo[3] == le)
 
+# Create if board is full
+def is_board_full(board):
+    if board.count(' ') > 1:
+        return False
+    else:
+        return True
+
 # Create Welcome for the player. Add input option after - their name
 # Add conditions when board is printed and when not
 def main():
