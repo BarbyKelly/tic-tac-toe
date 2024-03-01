@@ -4,7 +4,7 @@ import random
 # this tutorial: https://youtu.be/5s_lGC2sxwQ?feature=shared
 # add to readme credit as well, tidy link
 
-# Create a tic-tac-toe board
+# Create a tic-tac-toe board. Single board better? Looks clearer?
 board = [' ' for x in range(10)]
 
 
@@ -18,11 +18,11 @@ def free_space(pos):
 
 def tictactoe_board(board):
     print('+--+--+--+--')
-    print('|  |  |  |')
+    print('| 1 | 2 | 3 |')
     print('| ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
-    print('|  |  |  |')
+    print('| 4 | 5 | 6 |')
     print('+--+--+--+--')
-    print('|  |  |  |')
+    print('| 7 | 8 | 9 |')
     print('| ' + board[4] + ' | ' + board[5] + ' | ' + board[6])
     print('|  |  |  |')
     print('+--+--+--+--')
@@ -42,12 +42,35 @@ def is_winner(bo, le):
     or (board [1] == le and bo[5] == le and bo[9] == le)
     or (board [7] == le and bo[5] == le and bo[3] == le)
 
+
+# Create player's move, guidelines and restrictions
+def player_move():
+    run = True
+    while run:
+        move = input("Please mark your chosen empty box by typing a number (1-9)")
+        try:
+            move = int(move)
+            if move > 0 and move < 10:
+                if space_is_free(move):
+                    run = False
+                    insert_letter('X', move)
+                else:
+                    print("This box is occupied! Please try a different one.")
+            else:
+                print("Please type a number between 1-9")
+        except:
+            print("Please type a number(1-9")
+
+
+
+
 # Create if board is full
 def is_board_full(board):
     if board.count(' ') > 1:
         return False
     else:
         return True
+
 
 # Create Welcome for the player. Add input option after - their name
 # Add conditions when board is printed and when not
