@@ -16,7 +16,7 @@ def free_space(pos):
     return board[pos] == ' '
 
 
-def print_board(board):
+def tictactoe_board(board):
     print('+--+--+--+--')
     print('|  |  |  |')
     print('| ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
@@ -42,8 +42,31 @@ def is_winner(bo, le):
     or (board [1] == le and bo[5] == le and bo[9] == le)
     or (board [7] == le and bo[5] == le and bo[3] == le)
 
-# Create Welcome for the player
+# Create Welcome for the player. Add input option after - their name
+# Add conditions when board is printed and when not
+def main():
+    print("Welcome to Tic Tac Toe")
+    print(tictactoe_board)
 
+    while not(is_board_full(board)):
+        if not(is_winner(board, 'O')):
+            player_move()
+            tictactoe_board(board)
+        else:
+            print("Computer won this time. Thanks for playing!")
+            break
+
+        if not(is_winner(board, 'X')):
+            comp_move()
+            tictactoe_board(board)
+        else:
+            print("Congratulations! You won! Thanks for playing!")
+            break
+
+    if is_board_full(board):
+        print("Tie! Thanks for playing!")
+
+    
 
 # Option to read instructions (i), play the game (p) or exit (e). "Type in the letter of your choice (i, p, or e) and then press Enter. 
 # Create Error messages if they choose anything else than i, p, e. Letters only, and those letters only.
