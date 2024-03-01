@@ -62,6 +62,42 @@ def player_move():
             print("Please type a number(1-9")
 
 
+def comp_move():
+    poss_move = [x for x, letter in enumerate(board) if letter == ' ' and x != 0]
+    move = 0
+
+    for let in ['O', 'X']:
+        for i in poss_move:
+            board_copy = board[:]
+            board_copy[i] = let
+            if is_winner(board_copy, let):
+                move = i
+                return move
+
+    corner_open = []
+    for i in poss_move:
+        if i in [1,3,7,9]:
+            corner_open.append(i)
+
+    if len(corner_open) > 0:
+        move = select_random(corner_open)
+        return move
+
+    if 5 in poss_move:
+        move = 5
+        return move
+
+    edges_open = []
+    for i in poss_move:
+        if i in [2,4,6,8]:
+            edges_open.append(i)
+
+    if len(edges_open) > 0:
+        move = select_random(edges_open)
+
+    return move
+
+
 # Create if board is full
 def is_board_full(board):
     if board.count(' ') > 1:
@@ -81,15 +117,20 @@ def main():
             player_move()
             tictactoe_board(board)
         else:
-            print("Computer won this time. Thanks for playing!")
+            print("Computer wins this time. Thanks for playing!")
             break
 
         if not (is_winner(board, 'X')):
-            comp_move()
-            tictactoe_board(board)
+            move = comp_move()
+            if move == 0:
+                print("Tie! Thanks for playing!")
         else:
-            print("Congratulations! You won! Thanks for playing!")
-            break
+            insert_letter('O', board)
+            print('Computer placed an \'O\' in position', move , ':')
+            print_board(board)
+    else:
+        print("Congratulations! You won! Thanks for playing!")
+        break
 
     if is_board_full(board):
         print("Tie! Thanks for playing!")
