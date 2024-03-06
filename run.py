@@ -1,19 +1,20 @@
 import random
 
-# Tic tac toe game base code followed from
+# Tic tac toe game original base code followed from
 # this tutorial: https://youtu.be/5s_lGC2sxwQ?feature=shared
 # add to readme credit as well, tidy link
 
-# Create a tic-tac-toe board. Single board better? Looks clearer?
-board = [' ' for x in range(10)]
+# Create a tic-tac-toe board.
+# board and other variables adjusted based on following this tutorial: https://youtu.be/dK6gJw4-NCo?feature=shared
+# board from Code Coach video
+""" Variables for tic-tac-toe """
+board = ["-", "-", "-",
+        "-", "-", "-",
+        "-", "-", "-",]
+currentPlayer = "X"
+winner = None
+gameRunning = True
 
-
-def insert_letter(le, pos):
-    board[pos] = letter
-
-
-def free_space(pos):
-    return board[pos] == ' '
 
 
 def tictactoe_board():
