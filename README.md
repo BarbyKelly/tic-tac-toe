@@ -107,11 +107,17 @@ Check that all the links work, all anchors.
 
 # Credits
 
+- Developer learned the base code for this Tic Tac Toe game from: [Code Coach](https://youtu.be/dK6gJw4-NCo?feature=shared)
+
+- The original base code for this Tic Tac Toe game was from: Tech With TimTic Tac Toe tutorial videos [Part 1](https://youtu.be/5s_lGC2sxwQ?feature=shared) and [Part 2](https://youtu.be/jAaJZLqryTI?feature=shared)
+
 - This project's README template is from a project: [A Battleships game](https://raw.githubusercontent.com/Code-Institute-Submissions/Battleships-P3-1/main/README.md)
 - README edited: contents menu added, clickable links, anchors based on the README that developer created as her project 2 (Code Institute, Software Development course).
 
 - Developer learned how to check pip installation, and how to install PyGame from [this article](https://www.geeksforgeeks.org/how-to-install-pygame-in-windows/)
 
-- Thank you mentor Daisy... for your input
+- Thank you mentors Lauren-Nicole and Daisy, facilitator Laura; tutors, anyone who guided via Slack
+
+- Grateful for Code Coach and Tech with Tim for their Tic Tac Toe YouTube tutorials 
 
 [Back to top](#contents)
