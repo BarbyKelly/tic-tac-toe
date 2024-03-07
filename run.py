@@ -87,8 +87,7 @@ def checkTie(board):
     if "-" not in board:
         printBoard(board)
         print("Tie!")
-        gameRunning = False
-
+       
 
 """ Check for Win """
 
