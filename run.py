@@ -96,7 +96,7 @@ def checkTie(board):
 def checkWin():
     if checkDiag(board) or checkHorizontal(board) or checkRow(board):
         print(f"The winner is {winner}")
-
+     
 
 """ Switch the player """
 
