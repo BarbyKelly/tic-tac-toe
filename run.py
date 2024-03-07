@@ -5,8 +5,8 @@ import random
 # add to readme credit as well, tidy link
 
 # Create a tic-tac-toe board.
-# variables adj based on: https://youtu.be/dK6gJw4-NCo?feature=shared
-# board learned from Code Coach video
+# board and other variables adjusted based on following this tutorial: https://youtu.be/dK6gJw4-NCo?feature=shared
+# board from Code Coach video
 """ Variables for tic-tac-toe """
 board = [
     "-", "-", "-",
@@ -17,106 +17,134 @@ winner = None
 gameRunning = True
 
 
-# Board - origin styling from https://youtu.be/5s_lGC2sxwQ?feature=shared
-# Board style edit based on: https://youtu.be/dK6gJw4-NCo?feature=shared
-# Style the board. for now similar to code coach. edit spaces, pluses
-def printBoard(board):
-    print('+---+---+---+')
-    print('| ' + board[0] + ' | ' + board[1] + ' | ' + board[2] + ' |')
-    print('+---+---+---+')
-    print('| ' + board[3] + ' | ' + board[4] + ' | ' + board[5] + ' |')
-    print('+---+---+---+')
-    print('| ' + board[6] + ' | ' + board[7] + ' | ' + board[8] + ' |')
-    print('+---+---+---+')
+
+def tictactoe_board():
+    print('+--+--+--+--')
+    print('| 1 | 2 | 3 |')
+    print('| ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
+    print('| 4 | 5 | 6 |')
+    print('+--+--+--+--')
+    print('| 7 | 8 | 9 |')
+    print('| ' + board[4] + ' | ' + board[5] + ' | ' + board[6])
+    print('|  |  |  |')
+    print('+--+--+--+--')
+    print('|  |  |  |')
+    print('| ' + board[7] + ' | ' + board[8] + ' | ' + board[9])
+    print('|  |  |  |')
 
 
-""" Add Player input """
-def playerInput(board):
-    inp = int(input("Please enter a number between 1-9: "))
-    if inp >= 1 and inp <= 9 and board[inp-1] == "-":
-        board[inp-1] = currentPlayer
+# Create a condition to determine the winner
+def is_winner(bo, le):
+    return (
+        (board[1] == le and bo[2] == le and bo[3] == le) or
+        (board[4] == le and bo[5] == le and bo[6] == le) or
+        (board[7] == le and bo[8] == le and bo[9] == le) or
+        (board[1] == le and bo[4] == le and bo[7] == le) or
+        (board[2] == le and bo[5] == le and bo[8] == le) or
+        (board[3] == le and bo[6] == le and bo[9] == le) or
+        (board[1] == le and bo[5] == le and bo[9] == le) or
+        (board[7] == le and bo[5] == le and bo[3] == le)
+    )
+
+
+# Create player's move, guidelines and restrictions
+def player_move():
+    run = True
+    while run:
+        move = input("Please mark any empty box by typing a number (1-9)")
+        try:
+            move = int(move)
+            if move > 0 and move < 10:
+                if space_is_free(move):
+                    run = False
+                    insert_letter('X', move)
+                else:
+                    print("This box is occupied! Please try a different one.")
+            else:
+                print("Please type a number between 1-9")
+        except error:
+            print("Please type a number(1-9")
+
+
+def comp_move():
+    poss_move = [x for x, letter in enumerate(board) if letter == ' ' and x != 0]
+    move = 0
+
+    for let in ['O', 'X']:
+        for i in poss_move:
+            board_copy = board[:]
+            board_copy[i] = let
+            if is_winner(board_copy, let):
+                move = i
+                return move
+
+    corner_open = []
+    for i in poss_move:
+        if i in [1, 3, 7, 9]:
+            corner_open.append(i)
+
+    if len(corner_open) > 0:
+        move = select_random(corner_open)
+        return move
+
+    if 5 in poss_move:
+        move = 5
+        return move
+
+    edges_open = []
+    for i in poss_move:
+        if i in [2, 4, 6, 8]:
+            edges_open.append(i)
+
+    if len(edges_open) > 0:
+        move = select_random(edges_open)
+
+    return move
+
+
+# Add random function for computer's moves
+def select_random(li):
+    ln = len(li)
+    r = random.randrange(o, ln)
+    return li(r)
+
+
+# Create if board is full
+def is_board_full(board):
+    if board.count(' ') > 1:
+        return False
     else:
-        print("Please try a different space!")
-
-
-""" Conditions for win or tie """
-""" Check horizontal lines """
-def checkHorizontal(board):
-    global winner
-    if board[0] == board[1] == board[2] and board[1] != "-":
-        winner = board[1]
-        return True
-    elif board[3] == board[4] == board[5] and board[3] != "-":
-        winner = board[4]
-        return True
-    elif board[6] == board[7] == board[8] and board[6] != "-":
-        winner = board[7]
-        return True
-
-""" Check rows """
-def checkRow(board):
-    global winner
-    if board[0] == board[3] == board[6] and board[0] != "-":
-        winner = board[3]
-        return True
-    elif board[1] == board[4] == board[7] and board[1] != "-":
-        winner = board[4]
-        return True
-    elif board[2] == board[5] == board[8] and board[2] != "-":
-        winner = board[5]
         return True
 
 
-""" Check diagonals """
-def checkDiag(board):
-    global winner
-    if board[0] == board[4] == board[8] and board[0] != "-":
-        winner = board[4]
-        return True
-    elif board[2] == board[4] == board[6] and board[2] != "-":
-        winner = board[4]
-        return True
+# Create Welcome for the player. Add input option after - their name
+# Add conditions when board is printed and when not
+def main():
+    print("Welcome to Tic Tac Toe \U000FEB68")
+    print(tictactoe_board)
 
+    while not (is_board_full(board)):
+        if not (is_winner(board, 'O')):
+            player_move()
+            tictactoe_board(board)
+        else:
+            print("Computer wins this time. Thanks for playing!")
+            break
 
-""" Check for Tie """
-def checkTie(board):
-    global gameRunning
-    if "-" not in board:
-        printBoard(board)
-        print("Tie!")
-        gameRunning = False
+        if not (is_winner(board, 'X')):
+            move = comp_move()
+            if move == 0:
+                print("Tie! Thanks for playing!")
+            else:
+                insert_letter('O', board)
+                print('Computer placed an \'O\' in position', move, ':')
+                print_board(board)
+        else:
+            print("Congratulations! You won! Thanks for playing!")
+            break
 
+    if is_board_full(board):
+        print("Tie! Thanks for playing!")
+        
 
-""" Check for Win """
-def checkWin():
-    if checkDiag(board) or checkHorizontal(board) or checkRow(board):
-        print(f"The winner is {winner}")
-
-""" Switch the player """
-def switchPlayer():
-    global currentPlayer
-    if currentPlayer == "X":
-        currentPlayer = "O"
-    else:
-       currentPlayer = "X"
-
-
-""" Create computer's moves """
-def computer(board):
-    while currentPlayer == "O":
-        position = random.randint(0, 8)
-        if board[position] == "-":
-            board[position] = "O"
-            switchPlayer()
-
-
-""" Check for win or tie after each turn """
-while gameRunning:
-    printBoard(board)
-    playerInput(board)
-    checkWin()
-    checkTie(board)
-    switchPlayer()
-    computer(board)
-    checkWin()
-    checkTie(board)
+main()
