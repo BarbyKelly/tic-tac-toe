@@ -101,10 +101,22 @@ def switchPlayer():
        currentPlayer = "X"
 
 
+""" Create computer's moves """
+def computer(board):
+    while currentPlayer == "O":
+        position = random.randint(0, 8)
+        if board[position] == "-":
+            board[position] = "O"
+            switchPlayer()
+
+
 """ Check for win or tie after each turn """
 while gameRunning:
     printBoard(board)
     playerInput(board)
     checkWin()
     checkTie(board)
-    switchPlayer
+    switchPlayer()
+    computer(board)
+    checkWin()
+    checkTie(board)
