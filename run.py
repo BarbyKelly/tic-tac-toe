@@ -30,4 +30,16 @@ def printBoard(board):
     print('+---+---+---+')
 
 
-printBoard(board)
+""" Add Player input """
+def playerInput(board):
+    inp = int(input("Please enter a number between 1-9 and press Enter: "))
+    if inp >= 1 and inp <= 9 and board[inp-1] == "-":
+        board[inp-1] = currentPlayer
+    else:
+        print("Please choose a different space!")
+
+
+""" Check for win or tie after each turn """
+while gameRunning:
+    printBoard(board)
+    playerInput(board)
