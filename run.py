@@ -32,14 +32,15 @@ def printBoard(board):
 
 """ Add Player input """
 def playerInput(board):
-    inp = int(input("Please enter a number between 1-9 and press Enter: "))
+    inp = int(input("Please enter a number between 1-9: "))
     if inp >= 1 and inp <= 9 and board[inp-1] == "-":
         board[inp-1] = currentPlayer
     else:
-        print("Please choose a different space!")
+        print("Please try a different space!")
 
 
 """ Conditions for win or tie """
+""" Check horizontal lines """
 def checkHorizontal(board):
     global winner
     if board[0] == board[1] == board[2] and board[1] != "-":
@@ -52,7 +53,7 @@ def checkHorizontal(board):
         winner = board[7]
         return True
 
-
+""" Check rows """
 def checkRow(board):
     global winner
     if board[0] == board[3] == board[6] and board[0] != "-":
@@ -66,6 +67,7 @@ def checkRow(board):
         return True
 
 
+""" Check diagonals """
 def checkDiag(board):
     global winner
     if board[0] == board[4] == board[8] and board[0] != "-":
@@ -76,6 +78,7 @@ def checkDiag(board):
         return True
 
 
+""" Check for Tie """
 def checkTie(board):
     global gameRunning
     if "-" not in board:
@@ -84,9 +87,24 @@ def checkTie(board):
         gameRunning = False
 
 
+""" Check for Win """
+def checkWin():
+    if checkDiag(board) or checkHorizontal(board) or checkRow(board):
+        print(f"The winner is {winner}")
+
+""" Switch the player """
+def switchPlayer():
+    global currentPlayer
+    if currentPlayer == "X":
+        currentPlayer = "O"
+    else:
+       currentPlayer = "X"
 
 
 """ Check for win or tie after each turn """
 while gameRunning:
     printBoard(board)
     playerInput(board)
+    checkWin()
+    checkTie(board)
+    switchPlayer
