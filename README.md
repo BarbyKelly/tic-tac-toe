@@ -1,46 +1,8 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-Welcome,
-
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
-
-## Reminders
-
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
-
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
----
-
-Happy coding!
-
-1. readme template, credit
-2. delete ci readme guidelines once steps completed
-3. add links and menu, back buttons
-4. turn links into a name/clickable word
-
 # Tic-Tac-Toe
 
-Talk about it. Spell check. Add link to the site.
-Add am I responsive image.
-Check that all the links work, all anchors.
+This game was developed as part of a project, by a software development student.
+Game involves an online player playing against a computer, trying to win the game, 
+by getting three of their own symbols in a row. 
 
 ## Contents
 
@@ -73,15 +35,36 @@ Check that all the links work, all anchors.
 
 ## First Time User:
 
+* Sees Tic-Tac-Toe game board
+* Is asked to enter a number between 1-9
+* After entering their choice of a number, sees computer's move printed on the board
+* Player and computer keep taking turns entering numbers
+* First to achieve 3 in a row, wins the game
+* Player sees the text stating who won or if it is a tie
+
 ## Returning User:
 
+* Has the option to play the game again
+
 [Back to top](#contents)
+
 
 # Features
 
 ## Existing Features
 
+* Tic-Tac-Toe board is printed
+* Text asking for input of a number is presented
+* Board changes according to the numbers chosen by the player and computer
+
+
 ## Future Features
+
+* Player is able to input their name to the game, which creates a personalised welcome
+* Options to read the instructions, play the game or exit
+* Player has an option to choose a character for the game eg star, emoji etc, instead of the default "X"
+* Time limit for the game
+* Counting how many games player has played, how many wins, how many ties
 
 [Back to top](#contents)
 

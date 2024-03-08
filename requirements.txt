@@ -1,1 +1,1 @@
-# Your requirements go here
+termcolor==2.4.0
