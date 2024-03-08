@@ -122,7 +122,7 @@ def computer(board):
 """ Check for win or tie after each turn """
 
 
-while gameRunning:
+def main(gameRunning):
     printBoard(board)
     playerInput(board)
     checkWin()
