@@ -1,7 +1,7 @@
 import random
 
 # Code for this game learned from: https://youtu.be/dK6gJw4-NCo?feature=shared
-""" Variables for tic-tac-toe """
+# Variables for tic-tac-toe
 board = [
     "-", "-", "-",
     "-", "-", "-",
@@ -10,10 +10,9 @@ currentPlayer = "X"
 winner = None
 gameRunning = True
 
-""" Tic Tac Toe board """
-
 
 def printBoard(board):
+    """Tic Tac Toe board"""
     print('+---+---+---+')
     print('| ' + board[0] + ' | ' + board[1] + ' | ' + board[2] + ' |')
     print('+---+---+---+')
@@ -23,10 +22,8 @@ def printBoard(board):
     print('+---+---+---+')
 
 
-""" Add Player input """
-
-
 def playerInput(board):
+    """Add Player input"""
     inp = int(input("Please enter a number between 1-9: "))
     if inp >= 1 and inp <= 9 and board[inp-1] == "-":
         board[inp-1] = currentPlayer
@@ -34,10 +31,8 @@ def playerInput(board):
         print("Please try a different space!")
 
 
-""" Check horizontal lines for win or tie """
-
-
 def checkHorizontal(board):
+    """Check horizontal lines for win or tie"""
     global winner
     if board[0] == board[1] == board[2] and board[0] != "-":
         winner = board[1]
@@ -50,10 +45,8 @@ def checkHorizontal(board):
         return True
 
 
-""" Check rows for win or tie"""
-
-
 def checkRow(board):
+    """Check rows for win or tie"""
     global winner
     if board[0] == board[3] == board[6] and board[0] != "-":
         winner = board[3]
@@ -66,10 +59,8 @@ def checkRow(board):
         return True
 
 
-""" Check diagonals for win or tie"""
-
-
 def checkDiag(board):
+    """Check diagonals for win or tie"""
     global winner
     if board[0] == board[4] == board[8] and board[0] != "-":
         winner = board[4]
@@ -79,28 +70,25 @@ def checkDiag(board):
         return True
 
 
-""" Check for Tie """
-
-
 def checkTie(board):
+    """Check for Tie"""
     global gameRunning
     if "-" not in board:
         printBoard(board)
         print("Tie!")
+        exit()
        
 
-""" Check for Win """
-
-
 def checkWin():
+    """Check for Win"""
     if checkDiag(board) or checkHorizontal(board) or checkRow(board):
-        print(f"The winner is {winner}")
+        printBoard(board)
+        print(f"The winner is {winner}. Congratulations!")
+        exit()
      
 
-""" Switch the player """
-
-
 def switchPlayer():
+    """Switch the player"""
     global currentPlayer
     if currentPlayer == "X":
         currentPlayer = "O"
@@ -108,10 +96,8 @@ def switchPlayer():
         currentPlayer = "X"
 
 
-""" Create computer's moves """
-
-
 def computer(board):
+    """Create computer's moves"""
     while currentPlayer == "O":
         position = random.randint(0, 8)
         if board[position] == "-":
@@ -119,15 +105,11 @@ def computer(board):
             switchPlayer()
 
 
-""" Check for win or tie after each turn """
-
-
-def main(gameRunning):
+while gameRunning:
+    """Check for win or tie after each turn"""
     printBoard(board)
     playerInput(board)
     checkWin()
     checkTie(board)
     switchPlayer()
     computer(board)
-    checkWin()
-    checkTie(board)
