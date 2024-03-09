@@ -94,13 +94,14 @@ Tic-Tac-Toe GitHub code is accessible [here](https://github.com/BarbyKelly/tic-t
 ### Fixed Bugs
 
 * Even when computer or player won, the game continued. The developer fixed it by adding exit() where appropriate
+* When player enters a number that has been already used, message pops up "Please try a different space!", and then computer takes a turn instead of the player, player misses their turn. Tutor John helped to fix this issue
 
 ![Computer wins!](documentation/computerwins.png)
 
 ### Known Bugs
 
 * Player is able to insert other characters, not just numbers between 1-9
-* When player enters a number that has been already used, message pops up "Please try a different space!", and then computer takes a turn instead of the player, player misses their turn
+* 
 
 ![Known Bug](documentation/knownbug.png)
 
