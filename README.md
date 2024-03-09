@@ -42,12 +42,13 @@ Tic-Tac-Toe GitHub code is accessible [here](https://github.com/BarbyKelly/tic-t
 * After entering their choice of a number, an X appears on the board to mark the player's choice of a number
 * Player then sees computer's move printed on the board, and the player is asked to enter another number
 * Player and computer keep taking turns
+* Error message appears when player enters anything other than numbers between 1-9
 * First to achieve 3 of their symbols in a row (vertically, horizontally or diagonally), wins the game
 * Player sees the text stating who won the game, or if it is a tie
 
 ## Returning User:
 
-* Has the option to play the game again
+* Has the option to play the game again by clicking on "Run Program"
 
 [Back to top](#contents)
 
@@ -59,8 +60,9 @@ Tic-Tac-Toe GitHub code is accessible [here](https://github.com/BarbyKelly/tic-t
 * Tic-Tac-Toe board is printed
 * Text is presented asking for a user input to enter a number
 * Board changes according to the numbers chosen by the player and computer
-* Game ends and player sees if there's a winner, or if it was a tie
-* Player can play the game again
+* Error message appears when player enters anything other than numbers between 1-9
+* Game ends and player finds out if there's a winner, or if it was a tie
+* Player can play the game again by clicking on "Run Program"
 
 
 ## Future Features
@@ -71,6 +73,7 @@ Tic-Tac-Toe GitHub code is accessible [here](https://github.com/BarbyKelly/tic-t
 * Time limit for the game
 * Counting how many games player has played, how many wins, how many ties
 * Choice to have two players, instead of the default option of 'computer vs player'
+* Player is presented with an option to play the game again when game ends, instead of having to click on "Run Program" again 
 
 [Back to top](#contents)
 
@@ -85,7 +88,7 @@ Tic-Tac-Toe GitHub code is accessible [here](https://github.com/BarbyKelly/tic-t
 ## Validator Testing
 
 * The developer used CI Python Linter to test if code is suitable for testing as expected by Code Institute
-* Python Terminal by Code Institute was used to test if the deployed game was running
+* Python Terminal by Code Institute was used to test if the deployed game was running as expected
 
 [Back to top](#contents)
 
@@ -93,16 +96,15 @@ Tic-Tac-Toe GitHub code is accessible [here](https://github.com/BarbyKelly/tic-t
 
 ### Fixed Bugs
 
-* Even when computer or player won, the game continued. The developer fixed it by adding exit() where appropriate
-* When player enters a number that has been already used, message pops up "Please try a different space!", and then computer takes a turn instead of the player, player misses their turn. Tutor John helped to fix this issue by adding the break and fixing indentation
-* Player is able to insert other characters, not just numbers between 1-9. Inserting a letter breaks the game. Tutor Roman helped to fix this issue by suggesting to edit playerInput with try and except ValueError
+* Even when computer or player won, the game continued. The developer fixed it by adding exit() where appropriate, student Towbie suggested exit() instead of break.
+* When player entered a number that had been already used, message popped up "Please try a different space!", and then computer took a turn instead of the player, player missed their turn. Mentor Lauren-Nicole Popich noticed this bug. Tutor John helped to fix this issue by adding the break and fixing indentation
+* Player was able to insert other characters, not just numbers between 1-9. Inserting a letter broke the game. Tutor Roman helped to fix this issue by suggesting to edit playerInput with try and except ValueError
 
 ![Computer wins!](documentation/computerwins.png)
 
 ### Known Bugs
 
-
-* 
+None at the moment, when deploying this verion of Tic Tac Toe
 
 ![Known Bug](documentation/knownbug.png)
 
@@ -112,7 +114,7 @@ Tic-Tac-Toe GitHub code is accessible [here](https://github.com/BarbyKelly/tic-t
 # Deployment
 
 - Login with [Heroku](https://www.heroku.com/auth/login)
-- Choose the correct app
+- Choose the correct app that is for this project
 - From the Menu click on "Deploy"
 - Scroll down and click on "Deploy Branch"
 - Wait until message appears: "Your app was successfully deployed."
@@ -130,11 +132,7 @@ Tic-Tac-Toe GitHub code is accessible [here](https://github.com/BarbyKelly/tic-t
 
 - README contents menu and anchor links added based on the README that developer created for her project 2 (Code Institute, Software Development course).
 
-- Thank you mentors Lauren-Nicole and Daisy, facilitator Laura; tutors, everyone who guided the developer via Slack
-
-- Credit to Towbie for suggesting to try exit() instead, when break didn't work for the developer, to end the game when someone had won
-
-- Thank you mentor Lauren-Nicole Popich for highlighting the bug (computer takes the move instead, if player enters a number that is already used), among other issues with the code
+- Thank you mentors Lauren-Nicole and Daisy, facilitator Laura; tutors; and everyone who guided the developer via Slack
 
 - Grateful for Code Coach and Tech with Tim for their Tic Tac Toe YouTube tutorials
 

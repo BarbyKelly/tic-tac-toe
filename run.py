@@ -34,7 +34,7 @@ def playerInput(board):
                 print("Please try a different space!")
         except ValueError:
             print("Invalid input. Please enter a valid number 1-9.")
-        
+ 
 
 def checkHorizontal(board):
     """Check horizontal lines for win or tie"""
@@ -82,7 +82,7 @@ def checkTie(board):
         printBoard(board)
         print("Tie!")
         exit()
-       
+ 
 
 def checkWin():
     """Check for Win"""
@@ -90,7 +90,7 @@ def checkWin():
         printBoard(board)
         print(f"The winner is {winner}. Congratulations!")
         exit()
-     
+
 
 def switchPlayer():
     """Switch the player"""
