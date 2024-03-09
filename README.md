@@ -70,7 +70,7 @@ Tic-Tac-Toe GitHub code is accessible [here](https://github.com/BarbyKelly/tic-t
 * Player has an option to choose a character for the game eg star, emoji, instead of the default "X"
 * Time limit for the game
 * Counting how many games player has played, how many wins, how many ties
-* Choice to have two players, instead of computer vs player
+* Choice to have two players, instead of the default option of 'computer vs player'
 
 [Back to top](#contents)
 
@@ -99,9 +99,22 @@ Tic-Tac-Toe GitHub code is accessible [here](https://github.com/BarbyKelly/tic-t
 
 ### Known Bugs
 
+* Player is able to insert other characters, not just numbers between 1-9
+* When player enters a number that has been already used, message pops up "Please try a different space!", and then computer takes a turn instead of the player, player misses their turn
+
+![Known Bug](documentation/knownbug.png)
+
+
 [Back to top](#contents)
 
 # Deployment
+
+- Login with [Heroku](https://www.heroku.com/auth/login)
+- Choose the correct app
+- From the Menu click on "Deploy"
+- Scroll down and click on "Deploy Branch"
+- Wait until message appears: "Your app was successfully deployed."
+- Click on "View"
 
 [Back to top](#contents)
 
@@ -118,6 +131,8 @@ Tic-Tac-Toe GitHub code is accessible [here](https://github.com/BarbyKelly/tic-t
 - Thank you mentors Lauren-Nicole and Daisy, facilitator Laura; tutors, everyone who guided the developer via Slack
 
 - Credit to Towbie for suggesting to try exit() instead, when break didn't work for the developer, to end the game when someone had won
+
+- Thank you mentor Lauren-Nicole Popich for highlighting the bug (computer takes the move instead, if player enters a number that is already used), among other issues with the code
 
 - Grateful for Code Coach and Tech with Tim for their Tic Tac Toe YouTube tutorials
 
