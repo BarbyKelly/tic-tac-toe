@@ -24,12 +24,14 @@ def printBoard(board):
 
 def playerInput(board):
     """Add Player input"""
-    inp = int(input("Please enter a number between 1-9: "))
-    if inp >= 1 and inp <= 9 and board[inp-1] == "-":
-        board[inp-1] = currentPlayer
-    else:
-        print("Please try a different space!")
-
+    while True:
+        inp = int(input("Please enter a number between 1-9: "))
+        if inp >= 1 and inp <= 9 and board[inp-1] == "-":
+            board[inp-1] = currentPlayer
+            break
+        else:
+            print("Please try a different space!")
+        
 
 def checkHorizontal(board):
     """Check horizontal lines for win or tie"""
