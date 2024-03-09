@@ -25,12 +25,15 @@ def printBoard(board):
 def playerInput(board):
     """Add Player input"""
     while True:
-        inp = int(input("Please enter a number between 1-9: "))
-        if inp >= 1 and inp <= 9 and board[inp-1] == "-":
-            board[inp-1] = currentPlayer
-            break
-        else:
-            print("Please try a different space!")
+        try:
+            inp = int(input("Please enter a number between 1-9: "))
+            if inp >= 1 and inp <= 9 and board[inp-1] == "-":
+                board[inp-1] = currentPlayer
+                break
+            else:
+                print("Please try a different space!")
+        except ValueError:
+            print("Invalid input. Please enter a valid number 1-9.")
         
 
 def checkHorizontal(board):
